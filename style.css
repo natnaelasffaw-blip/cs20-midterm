@@ -1,0 +1,410 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #171717;
+    color: #eeeeee;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+a {
+    color: #39FF14;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+/* Header and navigation */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #222222;
+    border-bottom: 2px solid #39FF14;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 0;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo:hover {
+    text-decoration: none;
+}
+
+.logo-mark {
+    padding: 0 10px;
+    background-color: #39FF14;
+    color: #171717;
+    border-radius: 3px;
+}
+
+.logo-word {
+    color: #39FF14;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: white;
+}
+
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
+    color: #39FF14;
+    text-decoration: underline;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #39FF14;
+    color: #111111;
+    border: 1px solid #39FF14;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #39FF14;
+    text-decoration: none;
+}
+
+.button-outline {
+    background-color: #222222;
+    color: white;
+}
+
+.button-outline:hover {
+    background-color: #333333;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Home page */
+.hero {
+    padding: 75px 0;
+    background-color: #222222;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)
+        ),
+        url("images/gym-background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    margin-top: 10px;
+    font-size: 44px;
+}
+
+.lead {
+    max-width: 650px;
+    font-size: 18px;
+}
+
+.eyebrow {
+    color: #39FF14;
+    font-weight: bold;
+}
+
+.hero-note {
+    margin-top: 25px;
+    color: #cccccc;
+}
+
+.accent {
+    color: #39FF14;
+}
+
+/* Shared sections */
+.section {
+    padding: 45px 0;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 22px;
+    background-color: #252525;
+    border: 1px solid #444444;
+    border-radius: 4px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 0;
+    color: #cccccc;
+}
+
+/* Hide the decorative numbering */
+.card-number {
+    display: none;
+}
+
+.callout {
+    padding: 30px;
+    margin-bottom: 45px;
+    background-color: #253b29;
+    border-left: 4px solid #39FF14;
+}
+
+/* About and destination pages */
+.page-intro {
+    padding: 35px 0;
+    background-color: #222222;
+    border-bottom: 1px solid #444444;
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+}
+
+.section-image {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.body-copy {
+    color: #cccccc;
+}
+
+.values-section {
+    background-color: #202020;
+}
+
+.feature-list {
+    padding-left: 25px;
+}
+
+.feature-list li {
+    margin-bottom: 12px;
+}
+
+.visit-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    padding: 30px;
+    margin-bottom: 45px;
+    background-color: #252525;
+    border: 1px solid #444444;
+    scroll-margin-top: 120px;
+}
+
+.visit-steps {
+    padding-left: 25px;
+}
+
+.visit-steps li {
+    margin-bottom: 20px;
+}
+
+.visit-steps h3 {
+    margin-bottom: 8px;
+}
+
+.project-note {
+    padding: 15px;
+    background-color: #171717;
+    border-left: 3px solid #39FF14;
+    font-size: 14px;
+}
+
+/* Footer */
+.site-footer {
+    padding: 30px 0 15px;
+    background-color: #222222;
+    border-top: 2px solid #39FF14;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #444444;
+    color: #cccccc;
+    font-size: 12px;
+}
+
+/* Keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    padding: 10px;
+    background-color: #39FF14;
+    color: black;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+a:focus-visible {
+    outline: 2px solid #39FF14;
+    outline-offset: 4px;
+}
+
+/* Smaller screens */
+@media (max-width: 800px) {
+    .header-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .main-nav {
+        justify-content: center;
+    }
+
+    .header-inner > .button {
+        display: none;
+    }
+
+    .three-columns,
+    .split-layout,
+    .visit-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+}
+
+/* Mobile screens, including 400px */
+@media (max-width: 480px) {
+    h1,
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .hero {
+        padding: 45px 0;
+    }
+
+    .lead {
+        font-size: 16px;
+    }
+
+    .main-nav {
+        gap: 16px;
+    }
+
+    .section {
+        padding: 30px 0;
+    }
+
+    .section-image {
+        height: 240px;
+    }
+
+    .callout,
+    .visit-panel {
+        padding: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
