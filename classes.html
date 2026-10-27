@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Explore weekly fitness classes at FORGE Fitness.">
+
+    <meta name="keywords"
+          content="gym, fitness, classes, yoga, HIIT, strength training">
+
+    <title>Fitness Classes | FORGE Fitness</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .classes-intro {
+            text-align: center;
+            padding: 55px 0;
+        }
+
+        .classes-intro h1 {
+            margin: 15px 0;
+        }
+
+        .classes-intro p {
+            color: #cccccc;
+        }
+
+        .schedule-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .schedule-heading h2 {
+            margin: 0;
+        }
+
+        #dayFilter {
+            padding: 10px 15px;
+            margin-left: 10px;
+            background-color: #39FF14;
+            color: #171717;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .class-card {
+            transition: 0.2s;
+        }
+
+        .class-card:hover {
+            border-color: #39FF14;
+            transform: translateY(-4px);
+        }
+
+        .class-day {
+            color: #39FF14;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .class-card h3 {
+            margin-top: 18px;
+            margin-bottom: 20px;
+        }
+
+        .class-detail {
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+
+        .class-divider {
+            border: none;
+            border-top: 1px solid #444444;
+            margin: 20px 0;
+        }
+
+        .trainer-name {
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .classes-intro {
+                padding: 35px 0;
+            }
+
+            .schedule-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #dayFilter {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+
+            <a class="logo" href="index.html"
+               aria-label="FORGE Fitness home">
+                <span class="logo-mark" aria-hidden="true">F</span>
+                <span>FORGE<span class="logo-word">FITNESS</span></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="destination.html">Explore</a>
+                <a href="classes.html" aria-current="page">Classes</a>
+                <a href="reviews.html">Reviews</a>
+            </nav>
+
+            <a class="button" href="destination.html#visit">
+                Plan a Visit ↗
+            </a>
+
+        </div>
+    </header>
+
+    <main id="main">
+
+        <section class="page-intro classes-intro">
+            <div class="container">
+                <p class="eyebrow">Train With Purpose</p>
+                <h1>Find Your Next <span class="accent">Challenge.</span></h1>
+                <p>
+                    From strength training to yoga, find a class
+                    that pushes you toward your fitness goals.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+
+                <div class="schedule-heading">
+                    <h2>Weekly Class Schedule</h2>
+
+                    <div>
+                        <label for="dayFilter">Filter by Day</label>
+
+                        <select id="dayFilter" onchange="displayClasses()">
+                            <option value="All">All Days</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="classList" class="three-columns"></div>
+
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="site-footer">
+        <div class="container footer-top">
+
+            <div>
+                <a class="logo" href="index.html"
+                   aria-label="FORGE Fitness home">
+                    <span class="logo-mark" aria-hidden="true">F</span>
+                    <span>FORGE<span class="logo-word">FITNESS</span></span>
+                </a>
+
+                <p>Make room for a stronger you.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="destination.html">Explore</a>
+                <a href="classes.html" aria-current="page">Classes</a>
+                <a href="reviews.html">Reviews</a>
+            </nav>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 FORGE Fitness · Fictional student project</p>
+
+            <p class="image-credit">
+                Photography:
+                <a href="https://unsplash.com/photos/d25dfeac3438">
+                    Unsplash
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        var classes = [];
+
+        fetch("classes.json")
+            .then(response => response.json())
+            .then(data => {
+                classes = data;
+                displayClasses();
+            })
+            .catch(error => {
+                document.getElementById("classList").innerHTML =
+                    "<p>Unable to load classes.</p>";
+            });
+
+        function displayClasses() {
+            var selectedDay = document.getElementById("dayFilter").value;
+            var output = "";
+
+            for (var i = 0; i < classes.length; i++) {
+                if (selectedDay == "All" || classes[i].day == selectedDay) {
+
+                    output += "<div class='card class-card'>";
+                    output += "<span class='class-day'>" + classes[i].day + "</span>";
+                    output += "<h3>" + classes[i].name + "</h3>";
+                    output += "<p class='class-detail'>Time: " + classes[i].time + "</p>";
+                    output += "<p class='class-detail'>Duration: " + classes[i].duration + " minutes</p>";
+                    output += "<hr class='class-divider'>";
+                    output += "<p class='trainer-name'>Coach " + classes[i].trainer + "</p>";
+                    output += "</div>";
+                }
+            }
+
+            document.getElementById("classList").innerHTML =
+                output || "<p>No classes available for this day.</p>";
+        }
+    </script>
+</body>
+</html>

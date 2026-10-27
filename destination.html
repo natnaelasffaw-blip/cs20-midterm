@@ -10,7 +10,7 @@
     <meta name="keywords"
           content="gym location, fitness destination, gym facilities, FORGE Fitness">
 
-    <title>FORGE Fitness | Destination</title>
+    <title>Explore | FORGE Fitness</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -28,7 +28,9 @@
             <nav class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
-                <a href="destination.html" aria-current="page">Destination</a>
+                <a href="destination.html" aria-current="page">Explore</a>
+                <a href="classes.html">Classes</a>
+                <a href="reviews.html">Reviews</a>
             </nav>
 
             <a class="button" href="#visit">Plan a Visit ↗</a>
@@ -36,76 +38,94 @@
     </header>
 
     <main id="main">
-        <section class="page-intro">
-            <div class="container">
-                <p class="eyebrow">Your fitness destination</p>
-
-                <h1>
-                    A space to focus.<br>
-                    <span class="accent">A reason to return.</span>
-                </h1>
-
-                <p class="lead">
-                    Explore our gym concept and picture where
-                    your next workout could take you.
-                </p>
-            </div>
-        </section>
-
-        <section class="section">
+        <section class="page-intro explore-hero">
             <div class="container split-layout">
                 <div>
-                    <p class="eyebrow">Explore the floor</p>
-                    <h2>Find your space.<br>Make it your own.</h2>
-
-                    <p class="body-copy">
-                        Our proposed layout gives different kinds of
-                        movement room to breathe, from focused lifting
-                        to a quieter stretch.
+                    <p class="eyebrow">Find your space. Build your routine.</p>
+                    <h1>Explore <span class="accent">FORGE Fitness.</span></h1>
+                    <p class="lead">
+                        Discover the space, equipment, and community built to help you reach your fitness goals.
                     </p>
-
-                    <ul class="feature-list">
-                        <li>
-                            <strong>Strength zone:</strong>
-                            free weights and resistance equipment.
-                        </li>
-                        <li>
-                            <strong>Movement studio:</strong>
-                            space for group workouts and floor exercises.
-                        </li>
-                        <li>
-                            <strong>Recovery corner:</strong>
-                            room to stretch and cool down.
-                        </li>
-                    </ul>
+                    <a class="button button-outline" href="#facilities">Explore the Facilities ↗</a>
                 </div>
-
-                <img
-                    class="section-image"
-                    src="gym-location.jpg"
-                    alt="Exercise equipment arranged inside a gym"
-                    width="700"
-                    height="500"
-                    loading="lazy"
-                >
+                <img class="section-image" src="gym-location.jpg"
+                     alt="Gym members training with battle ropes on an indoor turf floor"
+                     width="700" height="500">
             </div>
         </section>
 
-        <section class="container visit-panel" id="visit">
+        <section class="section" id="facilities">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Space for every goal</p>
+                    <h2>Explore Our Facilities</h2>
+                    <p class="body-copy">From your first rep to your final stretch, find a space that fits your workout.</p>
+                </div>
+                <div class="three-columns">
+                    <article class="card facility-card">
+                        <img class="facility-image" src="facility-strength.jpg"
+                             alt="Green resistance machines and dumbbell racks in a gym"
+                             width="700" height="393" loading="lazy">
+                        <div class="facility-copy">
+                            <h3>Strength Zone</h3>
+                            <p>Build strength with free weights, resistance machines, and strength training equipment.</p>
+                        </div>
+                    </article>
+                    <article class="card facility-card">
+                        <img class="facility-image" src="facility-movement.jpg"
+                             alt="Rows of stationary bikes in an indoor group cycling studio"
+                             width="700" height="409" loading="lazy">
+                        <div class="facility-copy">
+                            <h3>Movement Studio</h3>
+                            <p>Find your energy in a dedicated space for yoga, HIIT, and other group fitness classes.</p>
+                        </div>
+                    </article>
+                    <article class="card facility-card">
+                        <img class="facility-image" src="facility-recovery.jpg"
+                             alt="Open green turf area beside a training rig in a gym"
+                             width="637" height="850" loading="lazy">
+                        <div class="facility-copy">
+                            <h3>Recovery Corner</h3>
+                            <p>Make time for stretching, mobility exercises, and cooling down after your workout.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section explore-visit" id="visit">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Come get to know us</p>
+                    <h2>Plan Your Visit</h2>
+                    <p class="body-copy">Explore the gym, meet our team, and find a membership that works for you.</p>
+                    <p class="body-copy">FORGE Fitness is a fictional gym created for a student project. The address and business details below are fictional.</p>
+                </div>
+                <div class="three-columns">
+                    <article class="card">
+                        <h3>Location</h3>
+                        <p>125 Fitness Way<br>Boston, MA<br><small>Fictional address</small></p>
+                    </article>
+                    <article class="card">
+                        <h3>Hours</h3>
+                        <p><strong>Monday–Friday</strong><br>5 AM–11 PM</p>
+                        <p><strong>Saturday–Sunday</strong><br>7 AM–9 PM</p>
+                    </article>
+                    <article class="card">
+                        <h3>Memberships</h3>
+                        <p>Flexible membership options for students, beginners, and experienced gym members. Find the right fit for your goals and schedule.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="container visit-panel">
             <div>
                 <p class="eyebrow">Before you drop in</p>
-                <h2>Your first visit,<br>made simple.</h2>
-
+                <h2>Your First Visit,<br>Made Simple</h2>
                 <p class="body-copy">
                     Bring comfortable workout clothes, a water bottle,
                     and indoor training shoes.
-                </p>
-
-                <!-- Replace this note with your group's location details -->
-                <p class="project-note">
-                    FORGE is a fictional gym for a student project.
-                    Our team will add the chosen address, opening hours,
-                    and membership information here.
                 </p>
             </div>
 
@@ -135,6 +155,11 @@
                 </li>
             </ol>
         </section>
+        <section class="container callout">
+            <h2>Ready to Get Started?</h2>
+            <p>Find a class that fits your goals and take the next step with the FORGE community.</p>
+            <a class="button" href="classes.html">Explore Our Classes</a>
+        </section>
     </main>
 
     <footer class="site-footer">
@@ -150,8 +175,10 @@
 
             <nav class="footer-nav" aria-label="Footer navigation">
                 <a href="index.html">Home</a>
-                <a href="about.html">Our Story</a>
-                <a href="destination.html">Find Your Space</a>
+                <a href="about.html">About</a>
+                <a href="destination.html" aria-current="page">Explore</a>
+                <a href="classes.html">Classes</a>
+                <a href="reviews.html">Reviews</a>
             </nav>
         </div>
 
@@ -163,7 +190,6 @@
                 <a href="https://unsplash.com/photos/c58bed479fcb">
                     Unsplash
                 </a>
-                · Draft text and code assisted by OpenAI ChatGPT
             </p>
         </div>
     </footer>

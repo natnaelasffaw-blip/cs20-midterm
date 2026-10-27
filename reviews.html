@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read member experiences at FORGE Fitness.">
+    <meta name="keywords" content="FORGE Fitness, gym, member reviews, testimonials">
+    <title>Member Reviews | FORGE Fitness</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .reviews-intro {
+            text-align: center;
+            padding: 55px 0;
+        }
+
+        .reviews-intro h1 {
+            margin: 15px 0;
+        }
+
+        .reviews-intro p {
+            color: #cccccc;
+        }
+
+        .reviews-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .review-card {
+            transition: 0.2s;
+        }
+
+        .review-card:hover {
+            border-color: #39FF14;
+            transform: translateY(-4px);
+        }
+
+        .review-stars {
+            color: #39FF14;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .review-text {
+            color: #dddddd;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .review-divider {
+            border: none;
+            border-top: 1px solid #444444;
+            margin: 20px 0;
+        }
+
+        .review-name {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .review-membership {
+            color: #aaaaaa;
+            font-size: 13px;
+        }
+
+        .review-disclaimer {
+            color: #999999;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .reviews-intro {
+                padding: 35px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="FORGE Fitness home">
+                <span class="logo-mark" aria-hidden="true">F</span>
+                <span>FORGE<span class="logo-word">FITNESS</span></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="destination.html">Explore</a>
+                <a href="classes.html">Classes</a>
+                <a href="reviews.html" aria-current="page">Reviews</a>
+            </nav>
+
+            <a class="button" href="destination.html#visit">
+                Plan a Visit ↗
+            </a>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <section class="page-intro reviews-intro">
+            <div class="container">
+                <p class="eyebrow">The FORGE Community</p>
+                <h1>Real Goals. <span class="accent">Stronger Together.</span></h1>
+                <p>
+                    Discover what makes the FORGE Fitness community special.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+
+                <div class="reviews-heading">
+                    <h2>Member Experiences</h2>
+                    <p>Every fitness journey starts somewhere.</p>
+                </div>
+
+                <div id="reviewList" class="three-columns"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <div>
+                <a class="logo" href="index.html" aria-label="FORGE Fitness home">
+                    <span class="logo-mark" aria-hidden="true">F</span>
+                    <span>FORGE<span class="logo-word">FITNESS</span></span>
+                </a>
+
+                <p>Make room for a stronger you.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="destination.html">Explore</a>
+                <a href="classes.html">Classes</a>
+                <a href="reviews.html" aria-current="page">Reviews</a>
+            </nav>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 FORGE Fitness · Fictional student project</p>
+        </div>
+    </footer>
+
+    <script>
+        var reviews = [
+            {
+                name: "Alex Johnson",
+                membership: "Premium Member",
+                rating: 5,
+                review: "FORGE Fitness has everything I need. The equipment is great and the atmosphere keeps me motivated."
+            },
+            {
+                name: "Sarah Miller",
+                membership: "Student Member",
+                rating: 5,
+                review: "The student membership is affordable and the fitness classes fit perfectly into my schedule."
+            },
+            {
+                name: "Michael Chen",
+                membership: "Basic Member",
+                rating: 4,
+                review: "The gym is always clean and the staff is friendly. It's a great place to work out after work."
+            },
+            {
+                name: "Emily Davis",
+                membership: "Premium Member",
+                rating: 5,
+                review: "I started taking the yoga and HIIT classes and have really enjoyed the experience."
+            },
+            {
+                name: "James Wilson",
+                membership: "Basic Member",
+                rating: 4,
+                review: "The weightlifting area has everything I need. I would definitely recommend this gym."
+            },
+            {
+                name: "Olivia Brown",
+                membership: "Student Member",
+                rating: 5,
+                review: "FORGE Fitness is a great place for beginners. The trainers are helpful and welcoming."
+            }
+        ];
+
+        function displayReviews() {
+            var output = "";
+
+            for (var i = 0; i < reviews.length; i++) {
+                var stars = "";
+
+                for (var j = 0; j < reviews[i].rating; j++) {
+                    stars += "★";
+                }
+
+                output += "<div class='card review-card'>";
+                output += "<div class='review-stars'>" + stars + "</div>";
+                output += "<p class='review-text'>\"" + reviews[i].review + "\"</p>";
+                output += "<hr class='review-divider'>";
+                output += "<p class='review-name'>" + reviews[i].name + "</p>";
+                output += "<p class='review-membership'>" + reviews[i].membership + "</p>";
+                output += "</div>";
+            }
+
+            document.getElementById("reviewList").innerHTML = output;
+        }
+
+        displayReviews();
+    </script>
+</body>
+</html>
