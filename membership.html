@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your fit with Basic, Student, and Premium memberships at FORGE Fitness.">
+    <meta name="keywords" content="FORGE Fitness, gym memberships, student membership, fitness plans, Boston gym">
+    <title>Memberships | FORGE Fitness</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html" aria-label="FORGE Fitness home">
+                <span class="logo-mark" aria-hidden="true">F</span>
+                <span>FORGE<span class="logo-word">FITNESS</span></span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="destination.html">Explore</a>
+                <a href="classes.html">Classes</a>
+                <a href="membership.html" aria-current="page">Memberships</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+
+            <a class="button" href="destination.html#visit">Plan a Visit ↗</a>
+        </div>
+    </header>
+    <main id="main">
+        <section class="page-intro">
+            <div class="container">
+                <p class="eyebrow">Your goals. Your routine.</p>
+                <h1>Memberships at <span class="accent">FORGE.</span></h1>
+                <p class="lead">Flexible monthly options for your first workout, your busy semester, or your next challenge. Find the fit that works for you.</p>
+            </div>
+        </section>
+        <section class="section" aria-labelledby="plans-heading">
+            <div class="container">
+                <div class="section-heading">
+                    <h2 id="plans-heading">Choose your membership</h2>
+                    <p class="body-copy">Three simple options. All prices and benefits are fictional for this student project.</p>
+                </div>
+                <div class="three-columns">
+                    <article class="card membership-card">
+                        <h3>Basic</h3>
+                        <p class="membership-price"><strong>$35</strong> / month</p>
+                        <p>A straightforward start for your everyday workouts.</p>
+                        <ul class="feature-list">
+                            <li>Access during all opening hours</li>
+                            <li>Strength and cardio equipment</li>
+                            <li>Stretching and recovery area</li>
+                        </ul>
+                        <button class="button membership-select" type="button" data-plan="Basic" aria-pressed="false">Select Basic</button>
+                    </article>
+                    <article class="card membership-card">
+                        <h3>Student</h3>
+                        <p class="membership-price"><strong>$25</strong> / month</p>
+                        <p>Room for fitness between classes and study sessions.</p>
+                        <ul class="feature-list">
+                            <li>All Basic membership benefits</li>
+                            <li>Discounted rate with a student ID</li>
+                            <li>Two group fitness classes each month</li>
+                        </ul>
+                        <button class="button membership-select" type="button" data-plan="Student" aria-pressed="false">Select Student</button>
+                    </article>
+                    <article class="card membership-card">
+                        <h3>Premium</h3>
+                        <p class="membership-price"><strong>$55</strong> / month</p>
+                        <p>More ways to train and keep your routine fresh.</p>
+                        <ul class="feature-list">
+                            <li>All Basic membership benefits</li>
+                            <li>Unlimited scheduled group classes</li>
+                            <li>One guest visit each month</li>
+                        </ul>
+                        <button class="button membership-select" type="button" data-plan="Premium" aria-pressed="false">Select Premium</button>
+                    </article>
+                </div>
+                <p id="membership-confirmation" role="status" aria-live="polite">Select a plan to see your choice here. This is a demo, with no signup or payment.</p>
+            </div>
+        </section>
+        <section class="container callout">
+            <h2>Ready for your first step?</h2>
+            <p>Meet the team, ask about a membership, and find your place at FORGE.</p>
+            <a class="button" href="contact.html">Get Started ↗</a>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <div>
+                <a class="logo" href="index.html" aria-label="FORGE Fitness home">
+                    <span class="logo-mark" aria-hidden="true">F</span>
+                    <span>FORGE<span class="logo-word">FITNESS</span></span>
+                </a>
+
+                <p>Make room for a stronger you.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="destination.html">Explore</a>
+                <a href="classes.html">Classes</a>
+                <a href="membership.html" aria-current="page">Memberships</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© 2026 FORGE Fitness · Fictional student project</p>
+        </div>
+    </footer>
+    <script>
+        var planButtons = document.querySelectorAll(".membership-select");
+
+        function selectMembership(event) {
+            var selectedButton = event.currentTarget;
+            var plan = selectedButton.getAttribute("data-plan");
+
+            for (var i = 0; i < planButtons.length; i++) {
+                var isSelected = planButtons[i] === selectedButton;
+                planButtons[i].setAttribute("aria-pressed", String(isSelected));
+                planButtons[i].parentElement.classList.toggle("membership-selected", isSelected);
+            }
+
+            document.getElementById("membership-confirmation").textContent =
+                "You selected " + plan + ". Contact our team to get started. This demo does not create a membership or charge you.";
+        }
+
+        for (var i = 0; i < planButtons.length; i++) {
+            planButtons[i].addEventListener("click", selectMembership);
+        }
+    </script>
+</body>
+</html>

@@ -34,6 +34,7 @@
                 <a href="about.html">About</a>
                 <a href="destination.html">Explore</a>
                 <a href="classes.html">Classes</a>
+                <a href="membership.html">Memberships</a>
                 <a href="reviews.html">Reviews</a>
                 <a href="faq.html">FAQ</a>
                 <a href="contact.html" aria-current="page">Contact Us</a>
@@ -69,14 +70,13 @@
             </div>
         </section>
         <section class="section values-section">
-            <h2 style="margin-left: 80px;">Fill out our contact form</h2>
+            <div class="container contact-section">
+            <h2>Fill out our contact form</h2>
             <form id="contactForm">
                 <label for="name">Full Name</label>
                 <input class="contact-form" type="text" id="name" name="name" required>
-                <br><br>
                 <label for="email">Email Address</label>
                 <input class="contact-form" type="email" id="email" name="email" required>
-                <br><br>
                 <label for="reason">What can we help with?</label>
                 <select class="contact-form" id="reason" name="reason" required>
                     <option value="" disabled selected>Select a topic</option>
@@ -86,14 +86,13 @@
                     <option value="general">General Question</option>
                     <option value="other">Other</option>
                 </select>
-                <br><br>
                 <label for="message">Your Message</label>
                 <textarea class="contact-form" id="message" name="message" rows="6" required></textarea>
-                <br><br>
-                <button class="contact-form" type="submit">Send Message ↗</button>
-                <p id="confirmation"></p>
+                <button class="button" type="submit">Send Message ↗</button>
+                <p id="confirmation" role="status" aria-live="polite"></p>
 
             </form>
+            </div>
         </section>
     </main>
 
@@ -113,9 +112,10 @@
                 <a href="about.html">About</a>
                 <a href="destination.html">Explore</a>
                 <a href="classes.html">Classes</a>
+                <a href="membership.html">Memberships</a>
                 <a href="reviews.html">Reviews</a>
                 <a href="faq.html">FAQ</a>
-                <a href="contact.html" aria-current="page">Contact</a>
+                <a href="contact.html" aria-current="page">Contact Us</a>
             </nav>
         </div>
 

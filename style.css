@@ -104,7 +104,8 @@ p {
 }
 
 .main-nav a:hover,
-.main-nav a[aria-current="page"] {
+.main-nav a[aria-current="page"],
+.footer-nav a[aria-current="page"] {
     color: #39FF14;
     text-decoration: underline;
 }
@@ -141,14 +142,51 @@ p {
     margin-top: 25px;
 }
 
-.contact-form {
-    background: #171717;
-    border-color: #cccccc;
-    color: #eeeeee;
+/* Contact form */
+.contact-section {
+    max-width: 700px;
 }
 
-form {
-    margin-left: 100px;
+#contactForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#contactForm label {
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.contact-form {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: #171717;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    color: #eeeeee;
+    font: inherit;
+}
+
+textarea.contact-form {
+    resize: vertical;
+}
+
+.contact-form:focus-visible,
+#contactForm button:focus-visible {
+    outline: 2px solid #39FF14;
+    outline-offset: 3px;
+}
+
+#contactForm .button {
+    align-self: flex-start;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#confirmation:empty {
+    display: none;
 }
 
 /* Home page */
@@ -417,4 +455,50 @@ a:focus-visible {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+/* Membership plans */
+.membership-card {
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid #39FF14;
+}
+
+.membership-card .membership-price {
+    margin: 0 0 18px;
+    color: #39FF14;
+}
+
+.membership-price strong {
+    font-size: 30px;
+}
+
+.membership-select {
+    margin-top: auto;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.membership-select:focus-visible {
+    outline: 2px solid #39FF14;
+    outline-offset: 4px;
+}
+
+.membership-selected {
+    border-color: #39FF14;
+    background-color: #253b29;
+}
+
+#membership-confirmation {
+    margin-top: 24px;
+}
+
+/* Keep the expanded navigation readable at intermediate widths. */
+.main-nav a,
+.header-inner > .button {
+    white-space: nowrap;
+}
+
+.header-inner .logo {
+    flex-shrink: 0;
 }
