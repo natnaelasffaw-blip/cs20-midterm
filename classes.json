@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Strength Training",
+    "day": "Monday",
+    "time": "9:00 AM",
+    "trainer": "Mike",
+    "duration": 60
+  },
+  {
+    "name": "Yoga",
+    "day": "Tuesday",
+    "time": "10:00 AM",
+    "trainer": "Sarah",
+    "duration": 45
+  },
+  {
+    "name": "HIIT",
+    "day": "Wednesday",
+    "time": "5:00 PM",
+    "trainer": "James",
+    "duration": 30
+  },
+  {
+    "name": "Indoor Cycling",
+    "day": "Thursday",
+    "time": "6:00 PM",
+    "trainer": "Emily",
+    "duration": 45
+  },
+  {
+    "name": "Full Body Workout",
+    "day": "Friday",
+    "time": "8:00 AM",
+    "trainer": "Mike",
+    "duration": 60
+  }
+]
